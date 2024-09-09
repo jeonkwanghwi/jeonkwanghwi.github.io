@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... [기존 head 내용 유지] -->
+    <title>Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f5f1;
+            color: #333;
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+        .profile-pic {
+            background-color: #fce4d6;
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+        button {
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #d6896c;
+        }
+        .copy-button {
+            background-color: #f0f0f0;
+            border: none;
+            cursor: pointer;
+            padding: 4px 8px;
+            margin-left: 8px;
+            font-size: 0.875rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .copy-button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-lg mx-auto">
+        <!-- Profile Section -->
+        <div class="text-center mb-10">
+            <div class="w-32 h-32 rounded-full profile-pic flex items-center justify-center mx-auto text-3xl font-bold text-white">
+                P
+            </div>
+            <h1 class="mt-4 text-4xl font-semibold text-orange-600">Your Name</h1>
+            <p class="mt-2 text-lg text-gray-700">Cloud Developer | Blockchain Enthusiast</p>
+        </div>
+
+        <!-- Profile Information -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-2 text-orange-500">About Me</h2>
+            <div class="space-y-3 text-gray-600 leading-relaxed">
+                <p>
+                    <strong>생년월일:</strong> 1995년 5월 15일
+                </p>
+                <p>
+                    <strong>핸드폰번호:</strong> +82 10-1234-5678
+                    <button class="copy-button" data-copy-target="+82 10-1234-5678">Copy</button>
+                </p>
+                <p>
+                    <strong>이메일:</strong> your.email@example.com
+                    <button class="copy-button" data-copy-target="your.email@example.com">Copy</button>
+                </p>
+                <p>
+                    <strong>깃허브:</strong> <a href="https://github.com/yourprofile" class="text-orange-600">github.com/yourprofile</a>
+                </p>
+                <p>
+                    <strong>블로그:</strong> <a href="https://yourblog.com" class="text-orange-600">yourblog.com</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Competencies Summary -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-2 text-orange-500">보유 역량 요약</h2>
+            <p class="leading-relaxed text-gray-600">
+                Java, Spring, AWS EC2, S3, Redis
+            </p>
+        </div>
+
+        <!-- Career Objectives -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-2 text-orange-500">Career Objectives</h2>
+            <p class="leading-relaxed text-gray-600">
+                희망 직무: BackEnd Engineer, QA, Cloud Engineer
+            </p>
+        </div>
+
+        <!-- Certifications -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-2 text-orange-500">Certifications</h2>
+            <ul class="list-disc list-inside text-gray-600 leading-relaxed">
+                <li>정보처리기사</li>
+                <li>SQLD</li>
+                <li>MS Azure Fundamental</li>
+                <li>ISTQB</li>
+            </ul>
+        </div>
+
+        <!-- Awards -->
+        <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-2 text-orange-500">Awards</h2>
+            <ul class="list-disc list-inside text-gray-600 leading-relaxed">
+                <li>2021 2학기 학기 우등생</li>
+                <li>2021 어드벤처 디자인 경진대회 - 우수상</li>
+                <li>2022 FarmSystem SW프로젝트 경진대회 - 최우수상 (1등상)</li>
+                <li>2023 공과대학 Speech 경진대회 - AI융합대학장상 (1등상)</li>
+                <li>2023 스마트 해상물류 2차 본선 진출, 한국정보처리학회 논문 게재 - 데이터 증강을 통한 안전모 착용 여부 확인 객체 탐지 모델 성능 향상 연구, 한국정보처리학회 학술대회논문집 30권 2호 1102-1103 (2페이지)</li>
+                <li>2023 2학기 학기 우등생</li>
+                <li>2024 1학기 학기 우등생</li>
+            </ul>
+        </div>
+
+        <!-- Projects Section -->
+        <!-- ... [기존 프로젝트 섹션 유지] -->
+
+        <!-- Self-Introduction -->
+        <!-- ... [기존 자기소개서 섹션 유지] -->
+
+        <!-- Buttons -->
+        <div class="flex justify-between">
+            <button class="bg-orange-500 text-white font-semibold py-2 px-4 rounded">Contact Me</button>
+        </div>
+    </div>
+
+    <!-- JavaScript to enable copy functionality -->
+    <script type="module">
+        document.querySelectorAll('.copy-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const copyText = this.getAttribute('data-copy-target');
+                navigator.clipboard.writeText(copyText).then(function() {
+                    alert('복사되었습니다: ' + copyText);
+                }, function(err) {
+                    alert('복사에 실패했습니다.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
