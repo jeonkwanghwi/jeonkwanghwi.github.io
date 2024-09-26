@@ -36,7 +36,8 @@ const tooltipData = {
     "50%": "기존 10초 이상 걸리던 것을 5초 이내로 줄임",
     "STT": "사람의 말을 텍스트로 변환함",
     "TTS": "텍스트를 음성으로 변환하여 들려줌",
-    "N+1 문제": "ORM에서 발생하는 성능 저하 문제"
+    "N+1 문제": "ORM에서 발생하는 성능 저하 문제",
+    "블로그": "블로그로 이동하기"
 };
 
 document.querySelectorAll('.tooltip').forEach(function (tooltip) {
