@@ -16,6 +16,18 @@ function showToast() {
     }, 2000);
 }
 
+document.querySelectorAll('a[data-scroll]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+
+
 function toggleProject(projectCard) {
     const projectContent = projectCard.querySelector('p');
     projectContent.classList.toggle('hidden');
