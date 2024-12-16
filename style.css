@@ -1,7 +1,14 @@
+:root {
+    --primary-color: #f08a5d; /* 주황색 강조 */
+    --secondary-color: #f9f9f9;
+    --background-color: #ffffff;
+    --text-color: #333333;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     margin: 0;
     display: flex;
     box-sizing: border-box;
@@ -26,9 +33,10 @@ body {
     bottom: 0;
     height: 100vh;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    overflow-y: auto;
+    overflow-y: auto; /* 스크롤 가능 */
     text-align: center; /* 텍스트 정렬 중앙으로 */
-
+    scrollbar-color: #f08a5d #f4f4f4; /* 스크롤바와 트랙 색상 */
+    scrollbar-width: thin; /* 얇은 스크롤바 */
 }
 
 /* 전광휘 이름부분 */
@@ -58,10 +66,79 @@ body {
     transition: background-color 0.3s ease;
 }
 
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 2px solid #f08a5d;
+    padding-bottom: 4px;
+    margin-bottom: 16px;
+}
+
 .sidebar ul li a:hover {
     background-color: #f08a5d;
     color: #fff;
 }
+
+
+/* 웹킷 브라우저 (Chrome, Edge, Safari 등)용 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 8px; /* 세로 스크롤바 너비 */
+    height: 8px; /* 가로 스크롤바 높이 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #f08a5d, #e07b52);
+    border-radius: 4px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #e07b52, #f08a5d); /* 호버 시 색상 변경 */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(244, 244, 244, 0.7); /* 투명도 추가 */
+    border-radius: 4px;
+}
+
+
+/* 특정 영역 (sidebar) 스크롤바 스타일 */
+.sidebar::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.sidebar.scrolling::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar.scrolling::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #f08a5d, #e07b52);
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #f08a5d, #e07b52);
+    border-radius: 4px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* 부드러운 그림자 */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #e07b52, #f08a5d);
+    transform: scale(1.2); /* 호버 시 확대 */
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(244, 244, 244, 0.7); /* 약간 투명한 트랙 배경 */
+    border-radius: 4px;
+}
+
 
 .content {
     margin-left: 320px;
@@ -72,16 +149,6 @@ body {
 
 .section {
     margin-bottom: 48px;
-}
-
-.section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.75rem;
-    color: #e07b52;
-    font-weight: 600;
-    border-bottom: 2px solid #f08a5d;
-    padding-bottom: 4px;
-    margin-bottom: 16px;
 }
 
 p {
@@ -133,6 +200,11 @@ h3 {
 .project-card {
     transition: all 0.3s ease; /* 전환 효과 추가 */
     overflow: hidden; /* 카드가 열릴 때 내용이 밖으로 넘치지 않도록 설정 */
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-card.expanded {
